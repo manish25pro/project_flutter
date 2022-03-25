@@ -1,4 +1,6 @@
 import 'package:first_flutter/screen/HomePage.dart';
+import 'package:first_flutter/screen/LoginPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,13 +11,16 @@ void main() {
 class myApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp( 
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.purple),
+      darkTheme:
+          ThemeData(primarySwatch: Colors.indigo, brightness: Brightness.light),
       title: "CodeLab",
-      home: Scaffold(
-        body: HomePage(),
-        drawer: Drawer(),
-        appBar: AppBar(title: Text("CodeLab")),
-      ),
+      routes: {
+        "/": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
     );
   }
 }
