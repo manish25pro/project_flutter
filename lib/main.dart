@@ -1,4 +1,6 @@
+import 'package:first_flutter/screen/HomePage.dart';
 import 'package:first_flutter/screen/LoginPage.dart';
+import 'package:first_flutter/utils/Routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,7 +24,8 @@ class myApp extends StatelessWidget {
       title: "CodeLab",
       routes: {
         "/": (context) => LoginPage(),
-        "/login": (context) => LoginPage()
+        MyRoutes.HomeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage()
       },
     );
   }
